@@ -1,5 +1,2 @@
-[dev]
-172.31.60.235
-
-[prod]
-172.31.55.212
+[frontend]
+frontend.roboshop.internal
