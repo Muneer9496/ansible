@@ -5,5 +5,5 @@
   
 
 - name: generating the node modules
-community.general.npm:
-   path: /home/{{APPUSER}}/{{COMPONENT}}
+  community.general.npm:
+    path: /home/{{APPUSER}}/{{COMPONENT}}
