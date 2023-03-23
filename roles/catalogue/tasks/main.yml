@@ -2,3 +2,8 @@
   ansible.builtin.include_role:
     name: common 
     tasks_from: nodejs
+  
+
+- name: generating the node modules
+community.general.npm:
+   path: /home/{{APPUSER}}/{{COMPONENT}}
