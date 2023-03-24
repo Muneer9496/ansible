@@ -9,3 +9,6 @@ catalogue.roboshop.internal
 
 [redis]
 redis.roboshop.internal
+
+[users]
+user.roboshop.internal
