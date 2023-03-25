@@ -18,7 +18,7 @@
 
 - name: Print returned information
   ansible.builtin.debug:
-    msg: "{{ mounts['mysql_log'] | b64decode}}"
+    msg: "{{ mounts['content'] | b64decode}}"
 
   rescue: 
     - name: Loading the file from the remote node
