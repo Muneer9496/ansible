@@ -14,9 +14,9 @@
   ansible.builtin.service:
     name: mysqld
     state: started          
-    enabled: yes]
+    enabled: yes
 
-- name: print returned information
+- name: Print returned information
   ansible.builtin.debug:
     msg: "{{ mounts['mysql_log'] | b64decode}}"
 
