@@ -23,7 +23,7 @@
 
 - name: Print returned information
   ansible.builtin.debug:
-    msg: "{{ mysql_log['mysql_log'] | b64decode}}"
+    msg: "{{ mysql_log['content'] | b64decode}}"
 
 
 
