@@ -4,11 +4,9 @@
     dest: /etc/yum.repos.d/mysql.repo 
 
 - name: Installing MySQL 
-  ansible.builtin.yum:
-    name: 
-      - mysql-community-server
-      - MySQL-python
-    state: installed  
+  ansible.builtin.package:
+    name: mysql-community-server
+    state: installed
 
 - name: Starting MySQL
   ansible.builtin.service:
@@ -24,7 +22,6 @@
 - name: Print returned information
   ansible.builtin.debug:
     msg: "{{ mysql_log['content'] | b64decode}}"
-
 
 
 
