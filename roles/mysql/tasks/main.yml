@@ -16,15 +16,16 @@
     state: started          
     enabled: yes
 
+- name: Loading the file from the remote node
+  ansible.builtin.slurp:
+    src: /var/log/mysqld.log
+    register: mysql_log   
+
 - name: Print returned information
   ansible.builtin.debug:
-    msg: "{{ mounts['content'] | b64decode}}"
+    msg: "{{ mysql_log['mysql_log'] | b64decode}}"
 
-  rescue: 
-    - name: Loading the file from the remote node
-      ansible.builtin.slurp:
-        src: /var/log/mysqld.log
-      register: mysql_log   
+
 
 
 
