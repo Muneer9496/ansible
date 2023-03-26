@@ -26,11 +26,6 @@
    - name: Loading the file from the remote node
      ansible.builtin.slurp:
        src: /var/log/mysqld.log
-     register: mysql_log 
-             
-   - name: Loading the file from the remote node
-     ansible.builtin.slurp:
-       src: /var/log/mysqld.log
      register: mysql_log   
 
    - name: Fetching the password and assigning it to a variable 
