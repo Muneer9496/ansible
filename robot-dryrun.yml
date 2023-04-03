@@ -1,11 +1,12 @@
 # This playbook creates an instance, runs the playbook and then terminates the instance 
+# Ensure you create an AMI from a server that has ANSIBLE Installed 
 - name: Creating EC2 for DryRun
   hosts: localhost
   gather_facts: False
   vars:
-    instance_type: "t3.micro"
-    security_group_id: "sg-000671b0e1fb3d069"  # Update as per your security group id
-    image: "ami-00ff427d936335825"             # Update this with the AMI ID in your account which has ansible installed.
+    instance_type: "t2.micro"
+    security_group_id: "sg-085c88c186fff9394"  # Update as per your security group id
+    image: "ami-0c1d144c8fdd8d690"             # Update this with the AMI ID in your account which has ansible installed.
     region: "us-east-1"
   tasks:
     - name: Launching instance
@@ -17,7 +18,7 @@
          wait: true
          region: "{{ region }}"
          instance_tags:
-          Name: ansible-drurun
+          Name: ansible-dryrun
       register: ec2
 
     - name: Adding instance to the host group
@@ -57,4 +58,4 @@
             instance_ids: '{{ INSTANCE_ID }}'
             region: us-east-1
 
-# Ansible is not a right tool for provisioning infrastructure. Terraform is the right way to provision the infrastructure
+# Ansible is not a right tool for provisioning infrastructure. Terraform is the right way to provision the infrastructure. But just consider it for understanding the test case.
